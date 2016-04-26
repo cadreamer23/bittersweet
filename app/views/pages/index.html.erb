@@ -1,2 +1,79 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<% if !user_signed_in? # if the user is not signed in, render this %>
+    <style>
+        body {
+            background: linear-gradient( /* transparent film on top of the BG to make it tinted like a window. */
+                rgba(0,0,0, 0.44),
+                rgba(0,0,0, 0.44)
+                ), url("/bg.jpg") no-repeat center center fixed
+                
+            ; /* only display once, center horizontal and vertical, don't let scroll change position. */
+            -webkit-background-size: cover;
+            -moz-background-size: cover; /* cover the whole html element. */
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        h1 {
+            color: white;
+            font-weight: bold;
+        }
+        .container-index {
+            margin-right: 15%;
+            margin-left: 15%;
+        }
+        .text {
+            color: white;
+            font-weight: 300;
+            font-size: 150%;
+        }
+        .footer-links {
+            text-align: center;
+            color: white;
+            margin-top: 8%;
+            font-size: 75%;
+        }
+        .log-in {
+            float: right;
+            width: 300px;
+            height: 150px;
+            margin-top: 7.5%;
+        }
+        .sign-up {
+            float: right;
+            width: 300px;
+            height: 250px;
+        }
+        .log-in-form {
+            margin: 5px;
+        }
+    </style>
+
+    <div class="container-index row">
+        <div class="col-sm-6">
+            <h1>Welcome to Bitter.</h1>
+            <p class="text">
+                We DO NOT Twitter Tweet, <br>
+                because we're Bittersweet!<br>
+                88 Characters or less to release. <br>
+            </p>
+        </div>
+        <div class="col-sm-6">
+                   <div class="log-in panel">
+                      Log In Sucka
+                   </div>
+                    
+                   <div class="sign-up panel">
+                        Sign Up Rookie
+                   </div>
+        </div>
+      
+        <div class="col-sm-12">
+            <p class="footer-links">About   Help   Blog   Status   Jobs   Terms   Privacy   Cookies   Ads   info   Brand   Advertise   Businesses   Media   Developers   Directory   ©   2016   Bittersweet</p>
+        </div>
+  
+    </div>
+  
+  <% else # if the user IS signed in, render the following %>
+
+Signed In
+
+<% end %>
